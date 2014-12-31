@@ -1,5 +1,6 @@
 $(function() {
 	// Setup kaleidoscope with dom elements and perhaps start coordinates
+	// Start coordinates could be get variables
 	var kaleidoscope = new Kaleidoscope90 ( {
 		peephole: document.getElementById('draggable'),
 		original: $("#container img")[0],
