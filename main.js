@@ -8,14 +8,6 @@ $(function() {
 		x: (typeof start_x === 'undefined') ? 92 : start_x,
 		y: (typeof start_y === 'undefined') ? 132 : start_y
 	});
-
-	$("input[type='button']").on('click', 
-		function() {
-			// Save img
-			// if succes, open fb pop up
-			console.log ( 'klik' )
-		}
-	);
 });
 
 /**
@@ -51,7 +43,7 @@ var Kaleidoscope90 = function ( options ) {
 		// Make the peephole draggable (GSAP). Redraw on drag
     Draggable.create($peephole, {
       bounds:original,
-      edgeResistance:0.65,
+      edgeResistance:1,
       type:"x,y", 
       onDrag: draw
     });
@@ -102,28 +94,4 @@ var Kaleidoscope90 = function ( options ) {
 		outputCtx.fill();
 
 	}
-
-	/**
-	 * export data
-	 * @return {ImageData} Resulting graphics
-	 */
-	function getImageData () {
-
-	}
-
-	return {
-		getImageData: getImageData
-	}
 };
-
-
-function getTileData ()
-{
-	// prepare to save canvas server side: set data in form-field	
-	// $('#tileData').value = $('#canvas').toDataURL("image/png");
-	document.getElementById('tileData').value = document.getElementById('canvas').toDataURL("image/png");
-
-	var pos = $( "#draggable" ).position();
-	document.getElementById('coor_x').value = pos.left;
-	document.getElementById('coor_y').value = pos.top;
-}

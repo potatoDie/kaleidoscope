@@ -1,16 +1,3 @@
-<?php
-/*
- * kaleidoscope/index.php.
- * 
- * Less pages. Do the same.
- * Use Ajax and display on/off to do all in 1 page (like an App!)
- * Just before you open the facebook dialog (this pop-up is allowed I think) save the image,
- * so the pop-up shows the preview.
- * So you just need 1 fb button, save the image (ajax) and on succes open fb pop-up
- * 
- */
-
-?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -32,21 +19,12 @@
 	</head>
 	<body>
 		<div id="wrap">
-			<p>Sleep het vierkantje over de linker afbeelding.</p>
+			<h2>Drag the <span>red square</span> over the left-hand image.</h2>
 			<div id="container">
 				<div id="draggable" class="ui-widget-content"></div>
 				<img src="hazelaar.jpg" width="300" height="488" alt="hazelaar">
 			</div>
 			<canvas id="canvas" width="300" height="488"></canvas>
-
-			<form action="share.php" method="post" onsubmit="getTileData()">
-				<input type="submit" value="Deel je ontwerp op" class="share">		
-				<input type="hidden" id="tileData" name="tileData">		
-				<input type="hidden" id="coor_x" name="coor_x">		
-				<input type="hidden" id="coor_y" name="coor_y">		
-			</form>
-			<input type="button" value="Deel je ontwerp op">		
-
 		</div>
 	</body>
 </html>
