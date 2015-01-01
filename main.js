@@ -38,7 +38,7 @@ var Kaleidoscope90 = function ( options ) {
 		tileCanvasCtx = tileCanvas.getContext("2d");
 
 		$peephole.css ( {left: options.x, top: options.y});
-		draw();
+		$(original).load( draw ); // Must wait for image to load before drawing
 
 		// Make the peephole draggable (GSAP). Redraw on drag
     Draggable.create($peephole, {
