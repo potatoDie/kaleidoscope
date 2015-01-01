@@ -1,0 +1,44 @@
+#canvas
+{
+	border:2px solid #ccc;
+	float:right;
+}
+#draggable { 
+	width: 30px; height: 30px;
+	border:4px solid rgba(255,25,25,.8); 
+	background:rgba(200,200,200,0.23);
+	position:absolute;
+	cursor:move;
+}
+#container
+{
+	margin-right:20px;
+	position:relative;
+	float:left;
+}
+#orig
+{
+	border:2px solid #ccc;
+	
+}
+#wrap
+{
+	width:650px;
+	text-align:center;
+	margin: 0 auto;
+}
+p
+{
+	font-family: "Trebuchet MS", Helvetica, Verdana, Arial, sans-serif;
+	font-size: 80%;		
+	color:black;
+}
+
+.share, input[type='button']
+{
+	background:url('facebook.png') no-repeat 96% 50% #eee;
+	padding:10px 36px 10px 6px;
+	border-width:0;
+	margin-top:1em;
+	cursor: pointer;
+}

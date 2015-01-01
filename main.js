@@ -48,15 +48,19 @@ var Kaleidoscope90 = function ( options ) {
 		$peephole.css ( {left: options.x, top: options.y});
 		draw();
 
-		// Make the peephole draggable. Redraw on drag
-		$peephole.draggable( {
-			containment: original,
-			drag: function () ) {
-				// do the gfx
-				createTile();
-				fill( tileCanvas, outputCtx );
-			}
-		});
+		// Make the peephole draggable (GSAP). Redraw on drag
+    Draggable.create($peephole, {
+      bounds:original,
+      edgeResistance:0.65,
+      type:"x,y", 
+      onDrag: draw
+    });
+
+		function draw() {
+			// do the gfx
+			createTile();
+			fill( tileCanvas, outputCtx );
+		}
 	}
 	
 	/**
