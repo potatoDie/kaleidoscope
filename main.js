@@ -5,10 +5,11 @@ $(function() {
 		peephole: document.getElementById('draggable'),
 		original: $("#container img")[0],
 		outputCanvas: document.getElementById('canvas'),
-		x: (typeof start_x === 'undefined') ? 92 : start_x,
-		y: (typeof start_y === 'undefined') ? 132 : start_y
+		x: (typeof start_x === 'undefined') ? 206 : start_x,
+		y: (typeof start_y === 'undefined') ? 394 : start_y
 	});
 });
+
 
 /**
  * Kaleidoscope90 repeats a reflected and rotated square (tile)
@@ -31,14 +32,15 @@ var Kaleidoscope90 = function ( options ) {
 		peepholeHeight = $peephole.height();
 		original = options.original;
 		outputCtx = options.outputCanvas.getContext('2d');
-
+		
 		tileCanvas = document.createElement("canvas");
 		tileCanvas.width = peepholeWidth * 2;
 		tileCanvas.height = peepholeHeight * 2;
 		tileCanvasCtx = tileCanvas.getContext("2d");
 
 		$peephole.css ( {left: options.x, top: options.y});
-		$(original).load( draw ); // Must wait for image to load before drawing
+
+		$(original).on( 'load', draw ); // Draw as soon as the image is loaded
 
 		// Make the peephole draggable (GSAP). Redraw on drag
     Draggable.create($peephole, {
@@ -47,13 +49,14 @@ var Kaleidoscope90 = function ( options ) {
       type:"x,y", 
       onDrag: draw
     });
-
-		function draw() {
-			// do the gfx
-			createTile();
-			fill( tileCanvas, outputCtx );
-		}
 	}
+
+	function draw() {
+		// do the gfx
+		createTile();
+		fill( tileCanvas, outputCtx );
+	}
+
 	
 	/**
 	 * Create tile (on a temporary canvas) using copies of peephole

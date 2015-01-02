@@ -19,6 +19,7 @@
 	</head>
 	<body>
 		<div id="wrap">
+			<a href="/"><figure id="icon"></figure></a>
 			<h2>Drag the <span>red square</span> over the left-hand image.</h2>
 			<div id="container">
 				<div id="draggable" class="ui-widget-content"></div>
